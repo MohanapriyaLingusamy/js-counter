@@ -1,0 +1,61 @@
+let counter=0;
+document.getElementById("increment").addEventListener('click',incrementFN);
+document.getElementById("decrement").addEventListener('click',decrementFN);
+function incrementFN()
+{
+    counter=parseInt(document.getElementById("ans").value);
+    if(counter>10)
+    {
+        funInc();
+    }
+    if(counter<10)
+    {
+        document.getElementById("increment").style.backgroundColor="green"
+        counter+=1;
+        document.getElementById("ans").value=counter;
+    }
+    else
+    {
+       funInc();
+    }
+    if(counter>0)
+    {
+        document.getElementById("decrement").style.backgroundColor="green";
+    }
+}
+function decrementFN()
+{
+    counter=parseInt(document.getElementById("ans").value);
+    if(counter<10)
+    {
+        document.getElementById("increment").style.backgroundColor="green";
+    }
+    if(counter<0)
+    {
+        funDec();
+    }
+    if(counter>0)
+    {
+        document.getElementById("decrement").style.backgroundColor="green"
+        counter-=1;
+        document.getElementById("ans").value=counter;
+    }
+    else
+    {
+        funDec();
+    }
+}
+function funInc()
+{
+    document.getElementById("increment").style.backgroundColor="red";
+    document.getElementById("increment").disabled=true;
+    document.getElementById("decrement").style.backgroundColor="green";
+    document.getElementById("decrement").disabled=false;
+}
+function funDec()
+{
+    document.getElementById("decrement").style.backgroundColor="red";
+    document.getElementById("decrement").disabled=true;
+    document.getElementById("increment").style.backgroundColor="green";
+    document.getElementById("increment").disabled=false;
+}
